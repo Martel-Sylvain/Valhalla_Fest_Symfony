@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{# {% block title %}Login
+{% endblock %} #}
+
+{% block body %}
+	{% if error %}
+		<div>{{ error.messageKey|trans(error.messageData, 'security')}}</div>
+	{% endif %}
+
+	<div class="flex flex-col justify-center items-center w-full h-screen">
+		<h1 class="text-white text-4xl">Se connecter</h1>
+
+		<div class="mt-16 w-[50%]">
+			<form action="{{ path('app_login')}}" method="post" class="max-w-md mx-auto">
+				<div class="mb-5">
+					<label for="username" class="block mb-2 text-white text-sm font-medium">Email:</label>
+					<input type="text" id="username" name="_username" value="{{ last_username }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+				</div>
+				<div class="mb-5">
+					<label for="password" class="block mb-2 text-white text-sm font-medium">Mot de passe:</label>
+					<input type="password" id="password" name="_password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+				</div>
+				<input type="hidden" name="_target_path" value="/">
+				<div class="mt-8 flex justify-center">
+					<button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Login</button>
+				</div>
+			</div>
+		</form>
+
+	</div>
+</div>{% endblock %}

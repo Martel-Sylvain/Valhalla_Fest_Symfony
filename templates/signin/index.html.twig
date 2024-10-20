@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{# {% block title %}Hello SigninController!
+{% endblock %} #}
+
+{% block body %}
+
+	<div class="flex flex-col justify-center items-center w-full h-screen">
+		<h1 class="text-white text-4xl">S'inscrire</h1>
+
+		<div class="mt-16 w-[50%]">
+			{{ form_start(form, {'attr': {'class': 'max-w-md mx-auto'}}) }}
+			<div class="mb-5">
+				{{ form_label(form.email, null, {'label_attr': {'class': 'block mb-2 text-white text-sm font-medium'}}) }}
+				{{ form_widget(form.email, {'attr': {'class': 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'}}) }}
+			</div>
+			<div class="mb-5">
+				{{ form_label(form.password, null, {'label_attr': {'class': 'block mb-2 text-white text-sm font-medium'}}) }}
+				{{ form_widget(form.password, {'attr': {'class': 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'}}) }}
+			</div>
+			<div class="mt-8 flex justify-center">
+				{{ form_widget(form.submit, {'attr': {'class': 'text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center'}})}}
+
+				{{ form_end(form) }}
+			</div>
+		</div>
+
+	</div>
+{% endblock %}
