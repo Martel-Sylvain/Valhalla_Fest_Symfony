@@ -1,3 +1,15 @@
-body {
-    background-color: skyblue;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.gradientCard {
+    background-image: linear-gradient(
+      45deg,
+      hsl(240deg 8% 5%) 0%,
+      hsl(281deg 4% 8%) 31%,
+      hsl(325deg 4% 10%) 56%,
+      hsl(349deg 5% 12%) 74%,
+      hsl(7deg 6% 15%) 89%,
+      hsl(20deg 7% 17%) 100%
+    );
+  }
